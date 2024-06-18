@@ -1,0 +1,280 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* layout */
+:root {
+  --primary: #1aac83;
+  --error: #e7195a;
+  --background-light: #f1f1f1;
+  --background-dark: #333;
+  --text-light: #000;
+  --text-dark: #fff;
+  --note-background-dark: #444;
+  --note-text-dark: #fff;
+  --note-time-dark: #ccc;
+  --input-background-dark: #555;
+  --input-text-dark: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins";
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+header {
+  background: #fff;
+}
+
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: #333;
+  text-decoration: none;
+}
+
+.pages {
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* homepage */
+.home {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 100px;
+}
+
+.note-details {
+  background: #fff;
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+
+.note-details h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: var(--primary);
+}
+
+.note-details p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.note-details span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #333;
+}
+
+.note-details .time {
+  color: #999999;
+}
+
+/* new note form */
+label, input {
+  display: block;
+}
+
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+input.error {
+  border: 1px solid var(--error);
+}
+
+/* navbar */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 10px;
+}
+
+nav button {
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: "Poppins";
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: 10px;
+}
+
+/* auth forms */
+form.signup, form.login {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+form.signup[data-theme="dark"], form.login[data-theme="dark"] {
+  background: #444;
+}
+
+form.signup input, form.login input {
+  background: #fff;
+  color: #000;
+}
+
+form.signup[data-theme="dark"] input, form.login[data-theme="dark"] input {
+  background: var(--input-background-dark);
+  color: var(--input-text-dark);
+}
+
+.App.light {
+  background: var(--background-light);
+  color: var(--text-light);
+}
+
+.App.dark {
+  background: var(--background-dark);
+  color: var(--text-dark);
+}
+
+[data-theme="dark"] {
+  --background-light: #333;
+  --text-light: #fff;
+}
+
+header[data-theme="dark"] {
+  background: #444;
+}
+
+header[data-theme="dark"] a {
+  color: #fff;
+}
+
+.note-details[data-theme="dark"] {
+  background: var(--note-background-dark);
+  color: var(--note-text-dark);
+}
+
+.note-details[data-theme="dark"] p {
+  color: var(--note-text-dark);
+}
+
+.note-details[data-theme="dark"] .time {
+  color: var(--note-time-dark);
+}
+
+/* Add button to switch theme */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+  margin-right: 10px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  background-color: white;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3; 
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.App.light .theme-switch .slider {
+  background-color: #ccc;
+}
+
+.App.dark .theme-switch .slider {
+  background-color: #666;
+}
